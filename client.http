@@ -1,0 +1,72 @@
+# Примеры REST API-запросов
+
+@baseUrl = http://localhost:5000
+
+# Создать пользователя с получением токена
+POST {{baseUrl}}/user
+Content-Type: application/json
+
+{
+  "first_name": "Jason",
+  "last_name": "Statham",
+  "email": "jason777@gmail.com",
+  "password": "jas0n_ST!@#"
+}
+
+###
+
+# Получить информацию об аккаунте пользователя
+GET {{baseUrl}}/user/1
+Content-Type: application/json
+
+###
+
+# Изменить информацию в аккаунте пользователя
+PATCH {{baseUrl}}/user/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTQ4MzY5NSwianRpIjoiZTQ2ZWRiMDYtODhkOS00YWFmLWE0NTgtZmM1OTQ1YzhjOGQ4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1NDgzNjk1LCJjc3JmIjoiNTQ1ZmYyYzMtNjY1YS00ZTdkLWExMGMtNzg5MGU0NDcxYTdjIn0.CKWocwdGp4FmneODGrwiItBctZx1doIs2DXxIOfo-z8
+
+{
+  "first_name": "David"
+}
+
+###
+
+# Удалить аккаунт пользователя
+DELETE {{baseUrl}}/user/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTQ4MjMyMCwianRpIjoiMGIyZWQxNDgtN2M3YS00YWIzLWE2M2EtYjQwZGQ5ZTg5NWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1NDgyMzIwLCJjc3JmIjoiZDJlYjE4OTUtMjA4Ni00ZWE1LTg2MGQtZTdhOGVjZmUyMmRmIn0.4Q4vjAJwfHok3E1FdgvW0-5LrVnJGMol15d6DmUUCLI
+
+###
+
+# Создать объявление
+POST {{baseUrl}}/advert
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTQ4MjU2MCwianRpIjoiODNiOGZjYzMtMzMzMy00NzE3LTk1ZDUtZDgzNWU0NTQxZTU4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1NDgyNTYwLCJjc3JmIjoiYjIxNmVjZGItYWM2ZC00YjQ3LWJlNTgtZWZmYzRmMzYwMmZjIn0.XwJmQe33GTYsXduzjCeUS74PmfCOgaeB1TTM32QPTKg
+
+{
+  "title": "Продаю телефон", "description": "iPhone 15 Pro 256Гб белый в хорошем состоянии", "owner": "1"}
+
+###
+
+# Получить объявление
+GET {{baseUrl}}/advert/1
+Content-Type: application/json
+
+###
+
+# Изменить объявление
+PATCH {{baseUrl}}/advert/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTQ4MjMyMCwianRpIjoiMGIyZWQxNDgtN2M3YS00YWIzLWE2M2EtYjQwZGQ5ZTg5NWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1NDgyMzIwLCJjc3JmIjoiZDJlYjE4OTUtMjA4Ni00ZWE1LTg2MGQtZTdhOGVjZmUyMmRmIn0.4Q4vjAJwfHok3E1FdgvW0-5LrVnJGMol15d6DmUUCLI
+
+{
+  "description": "Samsung Galaxy S24 512Гб"
+}
+
+###
+
+# Удалить объявление
+DELETE {{baseUrl}}/advert/1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTcyNTQ4MjMyMCwianRpIjoiMGIyZWQxNDgtN2M3YS00YWIzLWE2M2EtYjQwZGQ5ZTg5NWJlIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6MSwibmJmIjoxNzI1NDgyMzIwLCJjc3JmIjoiZDJlYjE4OTUtMjA4Ni00ZWE1LTg2MGQtZTdhOGVjZmUyMmRmIn0.4Q4vjAJwfHok3E1FdgvW0-5LrVnJGMol15d6DmUUCLI
