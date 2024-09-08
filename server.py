@@ -3,10 +3,9 @@ import os
 from flask import Flask, Response, request, jsonify
 from flask.views import MethodView
 from flask_bcrypt import Bcrypt
-from flask_jwt_extended import create_access_token
-from flask_jwt_extended import get_jwt_identity
-from flask_jwt_extended import jwt_required
-from flask_jwt_extended import JWTManager
+from flask_jwt_extended import create_access_token, get_jwt_identity, \
+    jwt_required, JWTManager
+
 from pydantic import ValidationError
 from sqlalchemy.exc import IntegrityError
 
